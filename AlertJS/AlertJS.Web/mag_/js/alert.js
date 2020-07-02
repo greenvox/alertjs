@@ -1,5 +1,5 @@
 // Alert.js v2.1 - Copyright Paul Nieuwelaar Magnetism 2016
-
+// Modified - 7/2/2020 - Replaced Xrm.Page with Xrm.Utility
 /*    
 Alert.show("Would you like to create a sale?", "This will create and open the new sale record.",
     [
@@ -233,7 +233,7 @@ Alert.showLoading = function (url) {
 }
 
 Alert.showWebResource = function (webResourceName, width, height, title, buttons, baseUrl, preventCancel, padding) {
-    baseUrl = baseUrl || Xrm.Page.context.getClientUrl();
+    baseUrl = baseUrl || Xrm.Utility.getGlobalContext().getClientUrl();
 
     var iframeUrl = baseUrl + "/webresources/" + webResourceName;
 
@@ -241,7 +241,7 @@ Alert.showWebResource = function (webResourceName, width, height, title, buttons
 }
 
 Alert.showDialogProcess = function (dialogId, entityName, recordId, callback, width, height, baseUrl) {
-    baseUrl = baseUrl || Xrm.Page.context.getClientUrl();
+    baseUrl = baseUrl || Xrm.Utility.getGlobalContext().getClientUrl();
 
     var dialogUrl = baseUrl + "/cs/dialog/rundialog.aspx?DialogId=%7b" + dialogId + "%7d&EntityName=" + entityName + "&ObjectId=" + recordId;
 
