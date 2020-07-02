@@ -1,5 +1,5 @@
 // Alert.js v2.1 - Copyright Paul Nieuwelaar Magnetism 2016
-// Modified - 7/2/2020 - Replaced Xrm.Page with Xrm.Utility
+// Replaced Xrm.Page.context.getClientUrl(); with Xrm.Utility.getGlobalContext().getClientUrl()
 /*    
 Alert.show("Would you like to create a sale?", "This will create and open the new sale record.",
     [
